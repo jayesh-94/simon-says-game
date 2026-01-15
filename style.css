@@ -15,6 +15,16 @@ body {
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+    
+}
+
+.instr {
+    text-align: start;
+}
+
 .red {
     background-color: #eb0345;
 }
