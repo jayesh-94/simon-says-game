@@ -5,7 +5,10 @@ This is a mini JavaScript-based Simon Says virtual game, designed as a response 
 
 🕹️ How to Play
 
-1-Start the game by pressing any key on your keyboard.
+# ✔ Mobile-friendly start and restart buttons added  
+# ✔ Improved game flow without keyboard dependency
+
+1-press start button to play.
 
 2-At each level, a new color blinks on the screen.
 
