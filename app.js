@@ -10,16 +10,40 @@
 
     let h2 = document.querySelector("h2");
 
-    document.addEventListener("keypress", function() {
-        if(started == false) {
-            console.log("game is started");
+    let startBtn = document.querySelector("#start-btn");
+    let restartBtn  = document.querySelector("#restart-btn");
+     
+    
+    function startGame() {
+        if(!started) {
             started = true;
-
             levelUp();
+            startBtn.style.display = "none";
+            restartBtn.style.display = "inline";
         }
+    }
+
+    startBtn.addEventListener("click", startGame);
+
+    restartBtn.addEventListener("click", () => {
+        gameSeq = [];
+        userSeq = [];
+        level = 0;
+
+        started = true;
+        levelUp();
+    })
+
+    // document.addEventListener("keypress", function() {
+    //     if(started == false) {
+    //         console.log("game is started");
+    //         started = true;
+
+    //         levelUp();
+    //     }
 
 
-    });
+    // });
 
     function gameFlash(btn) {
         btn.classList.add("flash");
@@ -65,7 +89,7 @@
                 highestScore = level;
             }
 
-            h2.innerHTML = `game over! Your score was <b>${level}</b> <br>Highest score was: ${highestScore}<br> press any key to start.`;
+            h2.innerHTML = `game over! Your score was <b>${level}</b> <br>Highest score was: ${highestScore}<br> press restart`;
             document.querySelector("body").style.backgroundColor = "red";
             setTimeout( function() {
                 document.querySelector("body").style.backgroundColor = "white";
